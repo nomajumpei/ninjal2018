@@ -1,26 +1,26 @@
 
 
-waldayu.transducers["heiltsuk_compare"] = (function() {
- var correspondences = {'aa': 'a', 'ee': 'e', 'ii': 'i', "'n": 'n', 'from': 'to', 'g_': 'g', 'k\u0332': 'k', "k\u0331'": 'k', 'x_': 'x', "'w": 'w', 'g\u0332': 'g', "kw'": 'kw', "'y": 'y', "'a": 'a', 'x\u0332': 'x', "k'": 'k', "'m": 'm', "'l": 'l', 'k_': 'k', 'oo': 'o', 'uu': 'u', "ts'": 'ts', "p'": 'p', "t'": 't'};
- var keys = ['from', "k\u0331'", "kw'", "ts'", 'g\u0332', 'x\u0332', 'k\u0332', 'g_', 'x_', 'k_', 'aa', 'ii', 'ee', 'oo', 'uu', "t'", "k'", "p'", "'l", "'n", "'m", "'w", "'y", "'a"];
- var regex = new RegExp("(" + keys.join('|') + ")", 'g');
- return function(str) {
-     return str.replace(regex, function(a,b) {
-         return correspondences[a];
-     });
- };
+waldayu.transducers["izumo_compare"] = (function() {
+    var correspondences = {'k': 'k', 'g': 'g', 's': 's', 'a': 'a'};
+    var keys = ['k', 'g', 's', 'a'];
+    var regex = new RegExp("(" + keys.join('|') + ")", 'g');
+    return function(str) {
+        return str.replace(regex, function(a,b) {
+            return correspondences[a];
+        });
+    };
 })();var config = {
- "L1": {
-     "name": "Heiltsuk",
-     "underlying": "",
-     "compare": "heiltsuk_compare",
-     "lettersInLanguage" : ['a', 'aa', 'b', 'd', 'e', 'ee', 'g', 'g\\u0331', 'gw', 'gy', 'h', 'hl', 'i', 'ii', 'j', 'k', 'k\\u0331', "k'", "k\\u0331'", 'kw', "kw'", 'ky', "ky'", 'l', "'l", 'm', "'m", 'n', "'n", 'o', 'oo', 'p', "p'", 's', 't', "t'", 'ts', "ts'", 'u', 'uu', 'w', "'w", 'x', 'x\\u0331', 'xw', 'y', "'y", "'"]
- },
- "L2": {
-     "name": "English",
-     "underlying": "",
-     "compare": ""
- }
+    "L1": {
+        "name": "Izumo",
+        "underlying": "",
+        "compare": "izumo_compare",
+        "lettersInLanguage" : ['a', 'aa', 'i', 'ii', 'u', 'uu', 'e', 'ee', 'o', 'oo', 'ka', 'ga', 'ki', 'gi', 'ku', 'gu', 'ke', 'ge', 'ko', 'go', 'sa', 'za', 'si', 'zi', 'su', 'zu', 'se', 'ze', 'so', 'zo', 'ta', 'da', 'ci', 'cu', 'te', 'de', 'to', 'do', 'na', 'ni', 'nu', 'ne', 'no', 'ha', 'ba', 'pa', 'hi', 'bi', 'pi', 'hu', 'bu', 'pu', 'he', 'be', 'pe', 'ho', 'bo', 'po', 'ma', 'mi', 'mu', 'me', 'mo', 'ja', 'ji', 'ju', 'je', 'jo', 'ra', 'ri', 'ru', 're', 'rowa', 'wi', 'wu', 'we', 'wo', 'N']
+    },
+    "L2": {
+        "name": "English",
+        "underlying": "",
+        "compare": ""
+    }
 };
 
 /* Search Variables */
